@@ -24,4 +24,10 @@ public class Account {
     @Column(name = "actualBalance")
     private BigDecimal actualBalance;
 
+    @Enumerated(EnumType.STRING)
+    private AccountType Type;
+
+    @Enumerated(EnumType.STRING)
+    private AccountStatus Status;
+
 }
