@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "KEN20950_CUSTOMER")
@@ -25,6 +26,9 @@ public class Customer {
 
     @Column(name = "phoneNumber", nullable = false)
     private String phoneNumber;
+
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Account> account;
 
 //    Getter and Setter
     public long getCustomerId() {

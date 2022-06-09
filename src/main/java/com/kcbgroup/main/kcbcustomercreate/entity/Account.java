@@ -30,6 +30,10 @@ public class Account {
     @Enumerated(EnumType.STRING)
     private AccountStatus Status;
 
+    @ManyToOne
+    @JoinColumn(name = "customerId", referencedColumnName = "customerId")
+    private Customer customer;
+
 //    Getter and setter
     public long getAccountId() {
         return accountId;
