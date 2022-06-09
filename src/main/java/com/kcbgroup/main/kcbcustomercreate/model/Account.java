@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 public class Account {
-    private long id;
+    private long accountId;
     private String accountNumber;
     private BigDecimal availableBalance;
     private BigDecimal actualBalance;

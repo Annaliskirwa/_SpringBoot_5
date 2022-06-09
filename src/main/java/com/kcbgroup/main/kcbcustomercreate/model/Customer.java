@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Customer {
-    private long id;
+    private long customerId;
     private String firstName;
     private String lastName;
     private String identificationNumber;
