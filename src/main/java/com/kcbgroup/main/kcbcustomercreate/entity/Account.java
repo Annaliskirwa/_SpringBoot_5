@@ -30,4 +30,66 @@ public class Account {
     @Enumerated(EnumType.STRING)
     private AccountStatus Status;
 
+//    Getter and setter
+    public long getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(long accountId) {
+        this.accountId = accountId;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public BigDecimal getAvailableBalance() {
+        return availableBalance;
+    }
+
+    public void setAvailableBalance(BigDecimal availableBalance) {
+        this.availableBalance = availableBalance;
+    }
+
+    public BigDecimal getActualBalance() {
+        return actualBalance;
+    }
+
+    public void setActualBalance(BigDecimal actualBalance) {
+        this.actualBalance = actualBalance;
+    }
+
+    public AccountType getType() {
+        return Type;
+    }
+
+    public void setType(AccountType type) {
+        Type = type;
+    }
+
+    public AccountStatus getStatus() {
+        return Status;
+    }
+
+    public void setStatus(AccountStatus status) {
+        Status = status;
+    }
+
+//    to string
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountId=" + accountId +
+                ", accountNumber='" + accountNumber + '\'' +
+                ", availableBalance=" + availableBalance +
+                ", actualBalance=" + actualBalance +
+                ", Type=" + Type +
+                ", Status=" + Status +
+                '}';
+    }
 }
