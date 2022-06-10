@@ -24,11 +24,11 @@ public class Account {
     @Column(name = "actualBalance")
     private BigDecimal actualBalance;
 
-    @Enumerated(EnumType.STRING)
-    private AccountType Type;
+//    @Enumerated(EnumType.STRING)
+//    private AccountType Type;
 
-    @Enumerated(EnumType.STRING)
-    private AccountStatus Status;
+//    @Enumerated(EnumType.STRING)
+//    private AccountStatus Status;
 
     @ManyToOne
     @JoinColumn(name = "customerId", referencedColumnName = "customerId")
@@ -67,21 +67,21 @@ public class Account {
         this.actualBalance = actualBalance;
     }
 
-    public AccountType getType() {
-        return Type;
-    }
+//    public AccountType getType() {
+//        return Type;
+//    }
+//
+//    public void setType(AccountType type) {
+//        Type = type;
+//    }
 
-    public void setType(AccountType type) {
-        Type = type;
-    }
-
-    public AccountStatus getStatus() {
-        return Status;
-    }
-
-    public void setStatus(AccountStatus status) {
-        Status = status;
-    }
+//    public AccountStatus getStatus() {
+//        return Status;
+//    }
+//
+//    public void setStatus(AccountStatus status) {
+//        Status = status;
+//    }
 
 //    to string
 
@@ -92,8 +92,8 @@ public class Account {
                 ", accountNumber='" + accountNumber + '\'' +
                 ", availableBalance=" + availableBalance +
                 ", actualBalance=" + actualBalance +
-                ", Type=" + Type +
-                ", Status=" + Status +
+//                ", Type=" + Type +
+//                ", Status=" + Status +
                 '}';
     }
 }

@@ -18,8 +18,8 @@ public class Transactions {
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
 
-    @Enumerated(EnumType.STRING)
-    private TransactionType transactionType;
+//    @Enumerated(EnumType.STRING)
+//    private TransactionType transactionType;
 
     @Column(name = "referenceNumber", nullable = false)
     private String referenceNumber;
@@ -49,13 +49,13 @@ public class Transactions {
         this.amount = amount;
     }
 
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    public void setTransactionType(TransactionType transactionType) {
-        this.transactionType = transactionType;
-    }
+//    public TransactionType getTransactionType() {
+//        return transactionType;
+//    }
+//
+//    public void setTransactionType(TransactionType transactionType) {
+//        this.transactionType = transactionType;
+//    }
 
     public String getReferenceNumber() {
         return referenceNumber;
@@ -79,7 +79,7 @@ public class Transactions {
         return "Transactions{" +
                 "transactionsId=" + transactionsId +
                 ", amount=" + amount +
-                ", transactionType=" + transactionType +
+//                ", transactionType=" + transactionType +
                 ", referenceNumber='" + referenceNumber + '\'' +
                 ", transactionCode='" + transactionCode + '\'' +
                 '}';
