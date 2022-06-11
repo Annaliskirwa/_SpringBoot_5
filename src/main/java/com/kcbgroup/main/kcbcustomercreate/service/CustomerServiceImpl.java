@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CustomerServiceImpl implements  CustomerService{
@@ -33,14 +34,20 @@ public class CustomerServiceImpl implements  CustomerService{
     }
 
     @Override
-    public String deleteCustomer(String identificationNumber) {
+    public String deleteCustomer(String identificationNumber) throws ResourceNotFoundException {
         Customer customer = customerRepository.findByIdentificationNumber(identificationNumber).orElseThrow(()-> new ResourceNotFoundException("The customer with id: "+ identificationNumber + "has not been found"));
         customerRepository.delete(customer);
         return("\"The customer with id: \"+ identificationNumber + \"has not been deleted\"");
     }
 
     @Override
-    public Customer findByIdentificationNumber(String identificationNumber) {
-        return null;
+    public Customer findByIdentificationNumber(String identificationNumber)throws ResourceNotFoundException {
+        Optional<Customer> result = customerRepository.findByIdentificationNumber(identificationNumber);
+        if (result.isPresent()){
+            return result.get();
+        }else{
+            throw new ResourceNotFoundException("The customer with identification Number" + identificationNumber + "has not been found");
+        }
+
     }
 }
