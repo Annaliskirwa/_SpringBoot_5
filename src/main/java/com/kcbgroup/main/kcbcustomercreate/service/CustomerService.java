@@ -1,7 +1,7 @@
 package com.kcbgroup.main.kcbcustomercreate.service;
 
 import com.kcbgroup.main.kcbcustomercreate.entity.Customer;
-import exception.ResourceNotFoundException;
+import com.kcbgroup.main.kcbcustomercreate.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

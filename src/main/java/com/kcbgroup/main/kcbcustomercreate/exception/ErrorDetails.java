@@ -1,4 +1,4 @@
-package exception;
+package com.kcbgroup.main.kcbcustomercreate.exception;
 
 import java.util.Date;
 

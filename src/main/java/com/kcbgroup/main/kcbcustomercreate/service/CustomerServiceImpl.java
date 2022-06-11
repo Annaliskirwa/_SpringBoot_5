@@ -2,7 +2,7 @@ package com.kcbgroup.main.kcbcustomercreate.service;
 
 import com.kcbgroup.main.kcbcustomercreate.entity.Customer;
 import com.kcbgroup.main.kcbcustomercreate.repository.CustomerRepository;
-import exception.ResourceNotFoundException;
+import com.kcbgroup.main.kcbcustomercreate.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
