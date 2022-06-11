@@ -2,6 +2,7 @@ package com.kcbgroup.main.kcbcustomercreate.service;
 
 import com.kcbgroup.main.kcbcustomercreate.entity.Customer;
 import com.kcbgroup.main.kcbcustomercreate.repository.CustomerRepository;
+import exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,17 +15,21 @@ public class CustomerServiceImpl implements  CustomerService{
 
     @Override
     public List<Customer> getAllCustomers() {
-        return null;
+        return customerRepository.findAll();
     }
 
     @Override
     public Customer createCustomer(Customer customer) {
-        return null;
+        return customerRepository.save(customer);
     }
 
     @Override
-    public Customer updateCustomer(String identificationNumber, Customer customer) {
-        return null;
+    public Customer updateCustomer(String identificationNumber, Customer customerUpdate) throws ResourceNotFoundException {
+        Customer customer = customerRepository.findByIdentificationNumber(identificationNumber).orElseThrow(()-> new ResourceNotFoundException("The customer with id: "+ identificationNumber + "has not been found"));
+        customer.setFirstName(customer.getFirstName());
+        customer.setLastName(customer.getLastName());
+        customer.setPhoneNumber(customer.getPhoneNumber());
+        return customerRepository.save(customer);
     }
 
     @Override
