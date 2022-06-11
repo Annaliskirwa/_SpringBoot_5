@@ -11,6 +11,6 @@ public interface CustomerService {
     List<Customer> getAllCustomers();
     Customer createCustomer(Customer customer);
     Customer updateCustomer(String identificationNumber, Customer customer) throws ResourceNotFoundException;
-    String deleteCustomer(Long customerId);
+    String deleteCustomer(String identificationNumber);
     Customer findByIdentificationNumber(String identificationNumber);
 }

@@ -33,8 +33,10 @@ public class CustomerServiceImpl implements  CustomerService{
     }
 
     @Override
-    public String deleteCustomer(Long customerId) {
-        return null;
+    public String deleteCustomer(String identificationNumber) {
+        Customer customer = customerRepository.findByIdentificationNumber(identificationNumber).orElseThrow(()-> new ResourceNotFoundException("The customer with id: "+ identificationNumber + "has not been found"));
+        customerRepository.delete(customer);
+        return("\"The customer with id: \"+ identificationNumber + \"has not been deleted\"");
     }
 
     @Override
