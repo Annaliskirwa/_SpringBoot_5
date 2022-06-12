@@ -51,4 +51,10 @@ public class CustomerController {
         CustomerDto customerResponse = modelMapper.map(customer, CustomerDto.class);
         return ResponseEntity.ok().body(customerResponse);
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteCustomer(@PathVariable(name = "id")String identificationNumber) throws ResourceNotFoundException{
+        customerService.deleteCustomer(identificationNumber);
+
+        return ResponseEntity.ok().body("The customer has succesfully been removed from the database");
+    }
 }
