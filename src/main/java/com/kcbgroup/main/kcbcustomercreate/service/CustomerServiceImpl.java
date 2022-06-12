@@ -39,7 +39,7 @@ public class CustomerServiceImpl implements  CustomerService{
     public String deleteCustomer(String identificationNumber) throws ResourceNotFoundException {
         Customer customer = customerRepository.findByIdentificationNumber(identificationNumber).orElseThrow(()-> new ResourceNotFoundException("The customer with id: "+ identificationNumber + "has not been found"));
         customerRepository.delete(customer);
-        return("\"The customer with id: \"+ identificationNumber + \"has not been deleted\"");
+        return("\"The customer with id: \"+ identificationNumber + \"has  been deleted\"");
     }
 
     @Override
