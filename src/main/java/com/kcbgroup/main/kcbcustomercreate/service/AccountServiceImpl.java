@@ -36,7 +36,7 @@ public class AccountServiceImpl implements AccountService {
     public String deleteAccount(String accountNumber) throws ResourceNotFoundException {
         Account account = accountRepository.findByAccountNumber(accountNumber).orElseThrow(()-> new ResourceNotFoundException("The account with account Number : "+ accountNumber + "has not been found"));
         accountRepository.delete(account);
-        return("\"The account with account number : \"+ accountNumber + \"has  been deleted\"");
+        return("The account with account number" + accountNumber + "has been deleted");
     }
 
     @Override
