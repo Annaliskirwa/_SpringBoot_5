@@ -18,23 +18,15 @@ public class Account {
     @Column(name = "accountNumber", nullable = false)
     private String accountNumber;
 
-    @Column(name = "availableBalance")
-    private BigDecimal availableBalance;
-
-    @Column(name = "actualBalance")
-    private BigDecimal actualBalance;
-
-//    @Enumerated(EnumType.STRING)
-//    private AccountType Type;
-
-//    @Enumerated(EnumType.STRING)
-//    private AccountStatus Status;
+    @Column(name = "accountName", nullable = false)
+    private String accountName;
 
     @ManyToOne
     @JoinColumn(name = "customerId", referencedColumnName = "customerId")
     private Customer customer;
 
 //    Getter and setter
+
     public long getAccountId() {
         return accountId;
     }
@@ -51,49 +43,29 @@ public class Account {
         this.accountNumber = accountNumber;
     }
 
-    public BigDecimal getAvailableBalance() {
-        return availableBalance;
+    public String getAccountName() {
+        return accountName;
     }
 
-    public void setAvailableBalance(BigDecimal availableBalance) {
-        this.availableBalance = availableBalance;
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
     }
 
-    public BigDecimal getActualBalance() {
-        return actualBalance;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setActualBalance(BigDecimal actualBalance) {
-        this.actualBalance = actualBalance;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
-
-//    public AccountType getType() {
-//        return Type;
-//    }
-//
-//    public void setType(AccountType type) {
-//        Type = type;
-//    }
-
-//    public AccountStatus getStatus() {
-//        return Status;
-//    }
-//
-//    public void setStatus(AccountStatus status) {
-//        Status = status;
-//    }
-
-//    to string
 
     @Override
     public String toString() {
         return "Account{" +
                 "accountId=" + accountId +
                 ", accountNumber='" + accountNumber + '\'' +
-                ", availableBalance=" + availableBalance +
-                ", actualBalance=" + actualBalance +
-//                ", Type=" + Type +
-//                ", Status=" + Status +
+                ", accountName='" + accountName + '\'' +
+                ", customer=" + customer +
                 '}';
     }
 }
