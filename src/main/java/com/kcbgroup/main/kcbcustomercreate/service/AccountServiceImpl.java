@@ -6,15 +6,15 @@ import com.kcbgroup.main.kcbcustomercreate.exception.ResourceNotFoundException;
 import com.kcbgroup.main.kcbcustomercreate.repository.AccountRepository;
 import com.kcbgroup.main.kcbcustomercreate.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class AccountServiceImpl implements AccountService {
     @Autowired
     private AccountRepository accountRepository;
-    @Autowired
-    private CustomerRepository customerRepository;
     @Override
     public List<Account> getAllAccounts() {
         return accountRepository.findAll();
