@@ -6,6 +6,7 @@ import com.kcbgroup.main.kcbcustomercreate.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,6 +19,7 @@ public class CustomerServiceImpl implements  CustomerService{
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
+
 
     @Override
     public Customer createCustomer(Customer customer) {
