@@ -29,9 +29,9 @@ public class CustomerServiceImpl implements  CustomerService{
     @Override
     public Customer updateCustomer(String identificationNumber, Customer customerUpdate) throws ResourceNotFoundException {
         Customer customer = customerRepository.findByIdentificationNumber(identificationNumber).orElseThrow(()-> new ResourceNotFoundException("The customer with id: "+ identificationNumber + "has not been found"));
-        customer.setFirstName(customer.getFirstName());
-        customer.setLastName(customer.getLastName());
-        customer.setPhoneNumber(customer.getPhoneNumber());
+        customer.setFirstName(customerUpdate.getFirstName());
+        customer.setLastName(customerUpdate.getLastName());
+        customer.setPhoneNumber(customerUpdate.getPhoneNumber());
         return customerRepository.save(customer);
     }
 

@@ -43,4 +43,12 @@ public class CustomerController {
         return new ResponseEntity<CustomerDto>(customerResponse, HttpStatus.CREATED);
 
     }
+    @PutMapping("/{id}")
+    public  ResponseEntity<CustomerDto> updateCustomer(@PathVariable(name="id") String identificationNumber, @RequestBody CustomerDto customerDto) throws  ResourceNotFoundException{
+        Customer customerRequest = modelMapper.map(customerDto, Customer.class);
+        Customer customer = customerService.updateCustomer(identificationNumber, customerRequest);
+
+        CustomerDto customerResponse = modelMapper.map(customer, CustomerDto.class);
+        return ResponseEntity.ok().body(customerResponse);
+    }
 }
